@@ -9,11 +9,15 @@ import javax.swing.JTextField;
 
 import io.model.Cell;
 import io.model.Game;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -24,11 +28,18 @@ import javafx.stage.Stage;
 
 public class GameView {
 
-
+	@FXML
+	private Button select;
 
 	private JTextArea text;
 	
-    private TextArea escribir;
+	@FXML
+    private ComboBox<?> songList;
+
+    @FXML
+    private Label songTxt;
+	
+//    private TextArea escribir;
 
 	private Label scoreTxt;
 
@@ -125,9 +136,10 @@ public class GameView {
 
 	}
 	
-	  public void mostrarMensaje(String mensaje) {
-	        escribir.appendText(mensaje + "\n");
-	    }
+	//Chat
+//	  public void mostrarMensaje(String mensaje) {
+//	        escribir.appendText(mensaje + "\n");
+//	    }
 
 	public void dibujarUsuarios() {
 
@@ -169,17 +181,22 @@ public class GameView {
 		this.text = text;
 	}
 
-	public TextArea getEscribir() {
-		return escribir;
-	}
-
-	public void setEscribir(TextArea escribir) {
-		this.escribir = escribir;
-	}
+	//Chat
+//	public TextArea getEscribir() {
+//		return escribir;
+//	}
+//
+//	public void setEscribir(TextArea escribir) {
+//		this.escribir = escribir;
+//	}
 
 	public void hide() {
 		this.stage.close();
 
 	}
+	
+	void selectBut(ActionEvent event) {
+
+    }
 
 }
